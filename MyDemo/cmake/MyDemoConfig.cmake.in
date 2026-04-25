@@ -1,0 +1,7 @@
+@PACKAGE_INIT@
+
+# 导入项目导出的目标
+include("${CMAKE_CURRENT_LIST_DIR}/MyDemoTargets.cmake")
+
+# 检查依赖（若有），示例：find_package(fmt REQUIRED)
+check_required_components(MyDemo)
