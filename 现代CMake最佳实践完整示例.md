@@ -244,7 +244,7 @@ check_required_components(MyDemo)
 
 #### include/MyDemo/math_api.h（公开API）
 
-```cpp
+```C++
 
 #ifndef MYDEMO_MATH_API_H
 #define MYDEMO_MATH_API_H
