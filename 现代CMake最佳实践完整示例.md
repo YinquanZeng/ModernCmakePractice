@@ -283,7 +283,7 @@ bool is_negative(int num);
 
 #### src/math/math_utils.cpp（实现）
 
-```C++
+```cpp
 
 #include "MyDemo/math_api.h"
 #include "math_utils.h"
@@ -309,7 +309,7 @@ bool is_negative(int num) {
 
 #### src/app/main.cpp（可执行程序）
 
-```C++
+```cpp
 
 #include "MyDemo/math_api.h"
 #include <iostream>
@@ -324,7 +324,7 @@ int main() {
 
 #### tests/math_test.cpp（单元测试）
 
-```C++
+```cpp
 
 #include "MyDemo/math_api.h"
 #include <gtest/gtest.h>
