@@ -244,7 +244,7 @@ check_required_components(MyDemo)
 
 #### include/MyDemo/math_api.h（公开API）
 
-```C++
+```cpp
 
 #ifndef MYDEMO_MATH_API_H
 #define MYDEMO_MATH_API_H
@@ -264,7 +264,7 @@ int multiply(int a, int b);
 
 #### src/math/math_utils.h（内部头文件）
 
-```C++
+```cpp
 
 #ifndef MYDEMO_MATH_UTILS_H
 #define MYDEMO_MATH_UTILS_H
