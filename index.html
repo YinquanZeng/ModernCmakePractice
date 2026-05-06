@@ -23,14 +23,24 @@
       subMaxLevel: 3,
       auto2top: true,
       
-      // 👇 关键：强制开启高亮
-      plugins: [
-        function (hook) {
-          hook.doneEach(function() {
-            Prism.highlightAll();
-          })
+      // // 👇 关键：强制开启高亮
+      // plugins: [
+      //   function (hook) {
+      //     hook.doneEach(function() {
+      //       Prism.highlightAll();
+      //     })
+      //   }
+      // ]
+
+      // 🔥 关键：让 C++ 兼容所有写法
+        alias: {
+          "c++": "cpp",
+          "C++": "cpp"
         }
-      ]
+      };
+      // 强制高亮
+      document.addEventListener('docsify:render', () => Prism.highlightAll());
+      
     }
   </script>
 
