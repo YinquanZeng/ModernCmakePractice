@@ -9,7 +9,7 @@
   <!-- 主题 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
   
-  <!-- 高亮样式（必须） -->
+  <!-- 高亮样式 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
 </head>
 <body>
@@ -22,33 +22,34 @@
       loadSidebar: true,
       subMaxLevel: 3,
       auto2top: true,
-      // 🔥 关键：让 C++ 兼容所有写法
+      
+      // 语言别名
       alias: {
         "c++": "cpp",
         "C++": "cpp"
-      },
-      
-      // 👇 关键：强制开启高亮
-      plugins: [
-        function (hook) {
-          hook.doneEach(function() {
-            Prism.highlightAll();
-          })
-        }
-      ]
+      }
     }
   </script>
 
-  <!-- 👇 顺序绝对不能错 -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
+  <!-- ====================================== -->
+  <!-- 👇 正确顺序：Prism 相关 → Docsify → 插件 -->
+  <!-- ====================================== -->
+
+  <!-- 1. Prism 核心 -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
 
-  <!-- 所有语言高亮 -->
+  <!-- 2. Prism 语言支持 -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cmake.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script>
+
+  <!-- 3. Docsify 主体 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
+
+  <!-- 4. 必须：docsify-prism 插件（官方高亮绑定） -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-prism@1.0.4/dist/docsify-prism.min.js"></script>
 
 </body>
 </html>
