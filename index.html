@@ -8,9 +8,10 @@
 
   <!-- 主题 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-  
-  <!-- 代码高亮样式 -->
+
+  <!-- 高亮样式 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
+
 </head>
 <body>
   <div id="app"></div>
@@ -19,51 +20,31 @@
     window.$docsify = {
       name: 'Modern CMake Practice',
       repo: 'https://github.com/YinquanZeng/ModernCmakePractice',
-      
-      // 侧边栏
       loadSidebar: true,
       subMaxLevel: 3,
-      
-      // 页面滚动
       auto2top: true,
-      
-      // // 语言别名
-      // alias: {
-      //   "c++": "cpp",
-      //   "C++": "cpp"
-      // },
-
-      // 👇 关键：强制开启高亮
       plugins: [
         function (hook) {
           hook.doneEach(function() {
             Prism.highlightAll();
           })
         }
-      ],
-
-    };
+      ]
+    }
   </script>
 
-  <!-- ============================ -->
-  <!-- 正确顺序：Prism → 高亮插件 → Docsify -->
-  <!-- ============================ -->
+  <!-- 核心库 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
 
-  <!-- 1. Prism 核心 -->
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js" charset="UTF-8"></script>
-
-  <!-- 2. Prism 语言支持 -->
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cmake.min.js"></script>
+  <!-- ✅ 关键修复：C++ 必须依赖 c 语言 -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+
+  <!-- 其他语言 -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cmake.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script>
-
-  <!-- 3. 高亮绑定插件（必须在 Docsify 之前！） -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-prism@1.0.4/dist/docsify-prism.min.js"></script>
-
-  <!-- 4. Docsify 主体（最后加载） -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js" charset="UTF-8"></script>
 
 </body>
 </html>
