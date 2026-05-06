@@ -33,15 +33,14 @@
       // ]
 
       // 🔥 关键：让 C++ 兼容所有写法
-        alias: {
-          "c++": "cpp",
-          "C++": "cpp"
-        }
-      };
-      // 强制高亮
-      document.addEventListener('docsify:render', () => Prism.highlightAll());
+      alias: {
+        "c++": "cpp",
+        "C++": "cpp"
+      }
+    };
+    // 强制高亮
+    document.addEventListener('docsify:render', () => Prism.highlightAll());
       
-    }
   </script>
 
   <!-- 👇 顺序绝对不能错 -->
