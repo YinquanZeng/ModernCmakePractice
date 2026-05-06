@@ -33,6 +33,15 @@
       //   "C++": "cpp"
       // },
 
+      // 👇 关键：强制开启高亮
+      plugins: [
+        function (hook) {
+          hook.doneEach(function() {
+            Prism.highlightAll();
+          })
+        }
+      ],
+
       // 👇 新增：GitHub Pages 必备优化
       relativePath: true,       // 相对路径
       noEmoji: true,            // 关闭自动表情符
