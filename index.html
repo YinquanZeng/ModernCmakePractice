@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -23,6 +23,14 @@
       loadSidebar: true,
       subMaxLevel: 3,
       auto2top: true,
+
+      // 搜索
+      search: {
+        placeholder: '搜索文档',
+        noData: '无结果',
+        depth: 3
+      },
+      
       plugins: [
         function (hook) {
           hook.doneEach(function() {
@@ -45,75 +53,8 @@
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cmake.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script>
-
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <title>Modern CMake 实践</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- 主题 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-  <!-- 高亮样式 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
-</head>
-<body>
-  <div id="app"></div>
-
-  <script>
-    window.$docsify = {
-      name: 'Modern CMake Practice',
-      repo: 'https://github.com/YinquanZeng/ModernCmakePractice',
-      loadSidebar: true,
-      subMaxLevel: 3,
-      auto2top: true,
-      relativePath: true,
-      noEmoji: true,
-
-      // 搜索
-      search: {
-        placeholder: '搜索文档',
-        noData: '无结果',
-        depth: 3
-      },
-
-      // // 语言别名（解决 c++ C++ 不高亮问题）
-      // alias: {
-      //   "c++": "cpp",
-      //   "C++": "cpp",
-      //   "cxx": "cpp",
-      //   "sh": "bash",
-      //   "shell": "bash"
-      // }
-    };
-  </script>
-
-  <!-- =================================== -->
-  <!-- 正确顺序：Prism → 语言 → 插件 → Docsify -->
-  <!-- =================================== -->
-
-  <!-- Prism 核心 -->
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-  <!-- Prism 语言 -->
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cmake.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script>
-
-  <!-- 高亮绑定（必须） -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-prism@1.0.4/dist/docsify-prism.min.js"></script>
   <!-- 搜索插件 -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
 
-  <!-- 最后：Docsify 主体 -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
-
 </body>
 </html>
-
