@@ -52,14 +52,15 @@
         highlight: true
       },
 
-    // // 语言别名（解决 c++ C++ 不高亮问题）
-    //   alias: {
-    //     "c++": "cpp",
-    //     "C++": "cpp",
-    //     "cxx": "cpp",
-    //     "sh": "bash",
-    //     "shell": "bash"
-    //   },
+      prism: {
+         alias: {
+           "c++": "cpp",
+           "C++": "cpp",
+           "cxx": "cpp",
+           "sh": "bash",
+           "shell": "bash"
+         }
+       },
       
       plugins: [
         function (hook) {
