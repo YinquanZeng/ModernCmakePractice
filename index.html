@@ -22,6 +22,11 @@
       loadSidebar: true,
       subMaxLevel: 3,
       auto2top: true,
+      // 🔥 关键：让 C++ 兼容所有写法
+      alias: {
+        "c++": "cpp",
+        "C++": "cpp"
+      },
       
       // 👇 关键：强制开启高亮
       plugins: [
@@ -40,6 +45,7 @@
 
   <!-- 所有语言高亮 -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cmake.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script>
