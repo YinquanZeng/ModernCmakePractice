@@ -5,24 +5,12 @@
   <title>Modern CMake 实践</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Docsify 主题 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-
-  <!-- 🔥 自定义淡绿色代码背景（护眼） -->
-  <style>
-    pre, code, .hljs {
-      background-color: #f0fff0 !important; /* 淡绿底色 */
-      color: #2c3e50 !important;           /* 文字深色，清晰可读 */
-      border-radius: 6px !important;
-      padding: 12px !important;
-    }
-    /* C++/CMake 关键字高亮颜色 */
-    .hljs-keyword { color: #0066cc !important; }
-    .hljs-string { color: #22863a !important; }
-    .hljs-function { color: #6f42c1 !important; }
-    .hljs-comment { color: #6a737d !important; }
-  </style>
+  
+  <!-- 主题 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  
+  <!-- 高亮样式（必须） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
 </head>
 <body>
   <div id="app"></div>
@@ -34,18 +22,27 @@
       loadSidebar: true,
       subMaxLevel: 3,
       auto2top: true,
-      noEmoji: true
+      
+      // 👇 关键：强制开启高亮
+      plugins: [
+        function (hook) {
+          hook.doneEach(function() {
+            Prism.highlightAll();
+          })
+        }
+      ]
     }
   </script>
 
-  <!-- Docsify + 高亮插件 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/prism.min.js"></script>
+  <!-- 👇 顺序绝对不能错 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
 
-  <!-- 语言包 -->
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cmake.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+  <!-- 所有语言高亮 -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cmake.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script>
 
 </body>
 </html>
