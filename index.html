@@ -60,10 +60,8 @@
            "sh": "bash",
            "shell": "bash"
          }
-      } 
-
-
-      
+      },
+  
       plugins: [
         function (hook) {
           hook.doneEach(function() {
@@ -71,7 +69,9 @@
           })
         }
       ]
-    }
+    };
+    Prism.languages['c++'] = Prism.languages.cpp;
+
   </script>
 
   <!-- 核心库 -->
